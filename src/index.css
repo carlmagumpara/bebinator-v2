@@ -14,6 +14,21 @@ code {
 }
 
 .doll {
-    position: absolute;
-    width: 
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  position: absolute;
+  top: 50px;
+}
+
+.dollContainer {
+
+}
+
+.itemContainer {
+  height: 80vh;
+  margin-top: 10vh;
+  overflow-y: scroll;
+  overflow-x: hidden;
 }
