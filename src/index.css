@@ -19,11 +19,11 @@ code {
   left: 0;
   right: 0;
   position: absolute;
-  top: 50px;
+  top: 70px;
 }
 
 .dollContainer {
-
+  height: 80vh;
 }
 
 .itemContainer {

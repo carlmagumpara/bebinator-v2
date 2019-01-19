@@ -8,6 +8,7 @@ import {
 } from 'reactstrap';
 import Slider from 'react-slick';
 import dollManifest from './doll-manifest.json';
+import mergeImages from 'merge-images';
 
 let settings = {
   dots: true,
@@ -55,6 +56,31 @@ class App extends Component {
       return this.generateArray(doll.count, doll.name);
     });
     this.createRandom()
+  }
+
+  save() {
+    let sortedItems = this.state.itemArray.sort((a, b) => parseFloat(a.zIndex) - parseFloat(b.zIndex));
+    let items = [];
+
+    sortedItems.map((doll) => {
+      let item = this.state[doll.name+'_selected'];
+      if (typeof item === 'undefined' || item === null) {
+        return items.push('/assets/initial.png');   
+      }
+
+      return items.push('/assets/'+doll.name+'/'+item);
+    });
+
+    mergeImages(items).then(b64 => {
+      console.log(b64)
+      const linkSource = b64;
+      const link = document.createElement('a');
+      const fileName = 'doll.png';
+
+      link.href = linkSource;
+      link.download = fileName;
+      link.click();
+    });
   }
 
   clear() {
@@ -123,7 +149,7 @@ class App extends Component {
                 <div className="mt-2">
                   <Row>
                     <Col md={{ size: 4 }}>
-                      <Button color="success" block>SAVE</Button>
+                      <Button color="success" block onClick={() => {this.save()}}>SAVE</Button>
                     </Col>
                     <Col md={{ size: 4 }}>
                       <Button color="danger" block onClick={() => {this.clear()}}>CLEAR</Button>
