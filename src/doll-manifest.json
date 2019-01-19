@@ -1,0 +1,102 @@
+[
+  {
+    "name": "base",
+    "zIndex": 0,
+    "count" : 5
+  },
+  {
+    "name": "fringe",
+    "zIndex": 10,
+    "count": 21
+  },
+  {
+    "name": "topa",
+    "zIndex": 5,
+    "count": 22
+  },
+  {
+    "name": "topb",
+    "zIndex": 6,
+    "count": 11
+  },
+  {
+    "name": "bottom",
+    "zIndex": 4,
+    "count": 20
+  },
+  {
+    "name": "back",
+    "zIndex": -10,
+    "count": 24
+  },
+  {
+    "name": "eyes",
+    "zIndex": 2,
+    "count": 15
+  },
+  {
+    "name": "eyebrows",
+    "zIndex": 11,
+    "count": 9
+  },
+  {
+    "name": "mouth",
+    "zIndex": 11,
+    "count": 17
+  },
+  {
+    "name": "dress",
+    "zIndex": 5,
+    "count": 8
+  },
+  {
+    "name": "shoes",
+    "zIndex": 1,
+    "count": 7
+  },
+  {
+    "name": "hat",
+    "zIndex": 11,
+    "count": 19
+  },
+  {
+    "name": "acc",
+    "zIndex": 9,
+    "count": 18
+  },
+  {
+    "name": "ltph",
+    "zIndex": 11,
+    "count": 10
+  },
+  {
+    "name": "beard",
+    "zIndex": 7,
+    "count": 3
+  },
+  {
+    "name": "eyewear",
+    "zIndex": 9,
+    "count": 13
+  },
+  {
+    "name": "emotion",
+    "zIndex": 1,
+    "count": 5
+  },
+  {
+    "name": "other",
+    "zIndex": 12,
+    "count": 6
+  },
+  {
+    "name": "cape",
+    "zIndex": -1,
+    "count": 6
+  },
+  {
+    "name": "scarf",
+    "zIndex": 8,
+    "count": 11
+  }
+]

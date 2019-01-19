@@ -7,114 +7,22 @@ import {
   Button
 } from 'reactstrap';
 import Slider from 'react-slick';
+import dollManifest from './doll-manifest.json';
+
+let settings = {
+  dots: true,
+  infinite: false,
+  speed: 500,
+  slidesToShow: 5,
+  slidesToScroll: 5
+};
 
 class App extends Component {
 
   constructor(props) {
     super(props);
     this.state = { 
-      itemArray: [
-        {
-          name: 'base',
-          zIndex: 0,
-          count : 5
-        },
-        {
-          name: 'fringe',
-          zIndex: 10,
-          count: 21
-        },
-        {
-          name: 'topa',
-          zIndex: 5,
-          count: 22
-        },
-        {
-          name: 'topb',
-          zIndex: 6,
-          count: 11
-        },
-        {
-          name: 'bottom',
-          zIndex: 4,
-          count: 20
-        },
-        {
-          name: 'back',
-          zIndex: -10,
-          count: 24
-        },
-        {
-          name: 'eyes',
-          zIndex: 2,
-          count: 15
-        },
-        {
-          name: 'eyebrows',
-          zIndex: 11,
-          count: 9
-        },
-        {
-          name: 'mouth',
-          zIndex: 11,
-          count: 17
-        },
-        {
-          name: 'dress',
-          zIndex: 5,
-          count: 8
-        },
-        {
-          name: 'shoes',
-          zIndex: 1,
-          count: 7
-        },
-        {
-          name: 'hat',
-          zIndex: 11,
-          count: 19
-        },
-        {
-          name: 'acc',
-          zIndex: 9,
-          count: 18
-        },
-        {
-          name: 'ltph',
-          zIndex: 11,
-          count: 10
-        },
-        {
-          name: 'beard',
-          zIndex: 7,
-          count: 3
-        },
-        {
-          name: 'eyewear',
-          zIndex: 9,
-          count: 13
-        },
-        {
-          name: 'emotion',
-          zIndex: 1,
-          count: 5
-        },
-        {
-          name: 'other',
-          zIndex: 12,
-          count: 6
-        },
-        {
-          name: 'cape',
-          zIndex: -1,
-          count: 6
-        },
-        {
-          name: 'scarf',
-          zIndex: 8,
-          count: 11
-        },
-      ],
+      itemArray: dollManifest,
       acc: [],
       back: [],
       base: [],
@@ -143,26 +51,9 @@ class App extends Component {
   }
 
   initial() {
-    this.generateArray(18, 'acc');
-    this.generateArray(24, 'back');
-    this.generateArray(5, 'base');
-    this.generateArray(3, 'beard');
-    this.generateArray(20, 'bottom');
-    this.generateArray(6, 'cape');
-    this.generateArray(8, 'dress');
-    this.generateArray(5, 'emotion');
-    this.generateArray(9, 'eyebrows');
-    this.generateArray(15, 'eyes');
-    this.generateArray(13, 'eyewear');
-    this.generateArray(21, 'fringe');
-    this.generateArray(19, 'hat');
-    this.generateArray(10, 'ltph');
-    this.generateArray(17, 'mouth');
-    this.generateArray(6, 'other');
-    this.generateArray(11, 'scarf');
-    this.generateArray(7, 'shoes');
-    this.generateArray(22, 'topa');
-    this.generateArray(11, 'topb');
+    this.state.itemArray.map((doll) => {
+      this.generateArray(doll.count, doll.name);
+    });
     this.createRandom()
   }
 
@@ -209,7 +100,6 @@ class App extends Component {
     return (
       <div className="dollContainer">
         {this.state.itemArray.map((doll) =>
-
           <img 
             key={doll.name}
             src={this.getStyle(doll.name)} 
@@ -223,15 +113,6 @@ class App extends Component {
   }
 
   render() {
-
-    let settings = {
-      dots: true,
-      infinite: false,
-      speed: 500,
-      slidesToShow: 5,
-      slidesToScroll: 5
-    };
-
     return (
       <div className="App">
         <div>
@@ -290,7 +171,6 @@ class App extends Component {
             </Row>
           </Container>
         </div>
-
       </div>
     );
   }
