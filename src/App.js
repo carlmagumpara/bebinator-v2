@@ -52,7 +52,7 @@ class App extends Component {
 
   initial() {
     this.state.itemArray.map((doll) => {
-      this.generateArray(doll.count, doll.name);
+      return this.generateArray(doll.count, doll.name);
     });
     this.createRandom()
   }
@@ -60,16 +60,16 @@ class App extends Component {
   clear() {
     this.state.itemArray.map((doll) => {
       if (doll.name === 'base') {
-        this.setState({ [doll.name+'_selected'] : 'base1.png' });
+        return this.setState({ [doll.name+'_selected'] : 'base1.png' });
       } else {
-        this.setState({ [doll.name+'_selected'] : null });
+        return this.setState({ [doll.name+'_selected'] : null });
       }
     });
   }
 
   createRandom() {
     this.state.itemArray.map((doll) => {
-      this.setState({ [doll.name+'_selected'] : doll.name+this.getRandomInt(1, doll.count)+'.png' }) 
+      return this.setState({ [doll.name+'_selected'] : doll.name+this.getRandomInt(1, doll.count)+'.png' }) 
     });
   }
 
